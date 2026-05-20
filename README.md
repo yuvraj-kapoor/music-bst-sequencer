@@ -1,20 +1,26 @@
 # 🎵 Music BST Sequencer
 
-This project implements a fully functional **Binary Search Tree (BST)** in C to store and manipulate musical notes. The BST organizes notes based on their position in a song and allows traversal, playback, and transformations like reversing and harmonizing.
+A **music sequencing engine built in C using a Binary Search Tree (BST)** to store, organize, and manipulate musical notes. This project demonstrates core data structures concepts through a creative application involving music playback and transformations.
 
 ---
 
-## 🚀 Features
+## 🚀 Overview
 
-- Insert notes into a BST using a unique key system
-- Search and delete notes
-- Tree traversals:
-  - In-order
+This project models musical notes as nodes in a Binary Search Tree, where each note is uniquely positioned based on its timing in a song. The BST enables efficient insertion, traversal, and modification of notes while supporting advanced operations like reversing and harmonizing a song.
+
+---
+
+## ✨ Features
+
+- Insert musical notes using a unique key system
+- Search and delete notes from the BST
+- Perform tree traversals:
+  - In-order (used for playback)
   - Pre-order
   - Post-order
-- Generate a playable playlist using in-order traversal
-- Reverse a song (play it backwards)
-- Harmonize notes by shifting pitch and timing
+- Generate a playable sequence of notes
+- Reverse a song (playback in reverse order)
+- Harmonize notes by adjusting pitch and timing
 
 ---
 
@@ -23,16 +29,63 @@ This project implements a fully functional **Binary Search Tree (BST)** in C to 
 - Binary Search Trees (BST)
 - Recursion
 - Tree traversal algorithms
-- Dynamic memory management (malloc/free)
+- Dynamic memory allocation (`malloc`, `free`)
 - Structs and pointers in C
 
 ---
 
-## 🎼 How It Works
+## 🎼 Data Representation
 
-Each musical note is stored as a node with:
-- `frequency` (pitch)
-- `bar` (position in song)
-- `index` (timing within the bar)
+Each note is stored as a node containing:
 
-The BST key is computed as:
+- `frequency` → pitch of the note  
+- `bar` → position in the song  
+- `index` → timing within the bar  
+
+The BST key is calculated as:
+-  key = (10 * bar) + index
+
+This ensures that all notes are uniquely ordered within the tree.
+
+---
+
+## 🔄 Advanced Operations
+
+### 🔁 Reverse Song
+Reconstructs the BST so the sequence of notes plays in reverse by recalculating timing positions.
+
+### 🎶 Harmonization
+Creates additional notes by:
+- Shifting pitch (frequency)
+- Adjusting timing offsets
+
+---
+
+## ▶️ How to Run
+
+1. Compile the program: gcc music_bst.c -o music_bst
+2. Run the executable:  ./music_bst
+
+---
+
+## 🧪 Sample Output
+
+In-order traversal (original):
+C4 → E4 → G4
+
+Reversed playback:
+G4 → E4 → C4
+
+---
+
+## 📌 Notes
+
+- This project was developed as part of a university assignment.
+- Focus is on correctness, data structures, and algorithmic design rather than UI.
+
+---
+
+## 👨‍💻 Author
+
+**Yuvraj Kapoor**  
+Computer Science Student
